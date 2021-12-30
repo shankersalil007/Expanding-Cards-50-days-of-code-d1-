@@ -1,0 +1,80 @@
+/* Global
+-------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Project
+-------------------------------------------------- */
+.container {
+  display: flex;
+  width: 90vw;
+  height: 90vh;
+  max-width: 480px;
+  max-height: 570px;
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  flex: 0.3;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in, border-radius 1.2s;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.4s ease-in 0.5s, left 1.2s;
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .panel.active h3 {
+    left: 55px;
+  }
+  .panel.active {
+    border-radius: 60px;
+  }
+}
